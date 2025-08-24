@@ -5,9 +5,9 @@ import { Characteristic, PlatformAccessory, Service } from 'homebridge';
 import { Observer } from './Observer';
 
 export class FanService {
-  on: Characteristic
-  rotationSpeed?: Characteristic
-  rotationDirection?: Characteristic
+  on: Characteristic;
+  rotationSpeed?: Characteristic;
+  rotationDirection?: Characteristic;
 
   constructor(
     platform: BondPlatform,
@@ -30,9 +30,9 @@ export class FanService {
 }
 
 export class LightbulbService {
-  on: Characteristic
-  brightness?: Characteristic
-  subType?: string
+  on: Characteristic;
+  brightness?: Characteristic;
+  subType?: string;
 
   constructor(
     platform: BondPlatform,
@@ -130,8 +130,8 @@ export class LightbulbService {
 }
 
 export class SwitchService {
-  on: Characteristic
-  subType: string
+  on: Characteristic;
+  subType: string;
 
   constructor(
     platform: BondPlatform,
@@ -155,8 +155,8 @@ export class SwitchService {
 // ButtonService is a switch that resets itself after 500ms. This provides a 
 // button like experience that isn't available in homebridge.
 export class ButtonService {
-  on: Characteristic
-  subType: string
+  on: Characteristic;
+  subType: string;
 
   constructor(
     platform: BondPlatform,
@@ -187,9 +187,9 @@ export class ButtonService {
 }
 
 export class WindowCoveringService {
-  currentPosition: Characteristic
-  targetPosition: Characteristic
-  positionState: Characteristic
+  currentPosition: Characteristic;
+  targetPosition: Characteristic;
+  positionState: Characteristic;
 
   constructor(
     platform: BondPlatform,
@@ -205,8 +205,8 @@ export class WindowCoveringService {
 }
 
 export class FlameService {
-  on: Characteristic
-  flame?: Characteristic
+  on: Characteristic;
+  flame?: Characteristic;
 
   constructor(
     platform: BondPlatform,

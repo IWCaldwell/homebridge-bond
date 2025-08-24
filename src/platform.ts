@@ -7,9 +7,9 @@ import { PLUGIN_NAME, PLATFORM_NAME } from './settings';
 import dgram from 'dgram';
 
 export class BondPlatform implements DynamicPlatformPlugin {
-  public readonly Service: typeof Service = this.api.hap.Service;
-  public readonly Characteristic: typeof Characteristic = this.api.hap.Characteristic;
-  public readonly UUIDGen = this.api.hap.uuid;
+  public readonly Service: typeof Service;
+  public readonly Characteristic: typeof Characteristic;
+  public readonly UUIDGen: typeof import('homebridge').uuid;
 
   private accessories: PlatformAccessory[] = [];
   private bonds: Bond[] | undefined;
@@ -18,6 +18,10 @@ export class BondPlatform implements DynamicPlatformPlugin {
     public log: Logging,
     public config: PlatformConfig,
     public api: API) {
+
+    this.Service = this.api.hap.Service;
+    this.Characteristic = this.api.hap.Characteristic;
+    this.UUIDGen = this.api.hap.uuid;
 
     if (config === null) {
       this.log.error('No config defined.');
